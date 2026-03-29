@@ -1,6 +1,6 @@
 # ET AI News Experience — PS8
 
-**ET AI Hackathon 2026 | Team INNOVEX**
+**ET AI Hackathon 2026 | Team DHAIRYA**
 
 ---
 
