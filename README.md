@@ -173,4 +173,4 @@ MIT License — built for ET AI Hackathon 2026
 
 ---
 
-*Built with ❤️ using Anthropic Claude API*
+
