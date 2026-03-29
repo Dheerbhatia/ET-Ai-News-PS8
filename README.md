@@ -11,9 +11,9 @@ Most news apps just throw articles at you. This one actually helps you
 starting from zero every time you open the app.
 
 Built for the Economic Times AI Hackathon 2026 (Problem Statement 8), 
-this is a web app that uses Claude (Anthropic's API) to track how news 
-stories evolve over time, surface what matters, and present it in a way 
-that feels like a conversation rather than a feed.
+this is a web app that tracks how news stories evolve over time, surfaces 
+what matters, and presents it in a way that feels like a conversation 
+rather than a feed.
 
 ---
 
@@ -21,7 +21,7 @@ that feels like a conversation rather than a feed.
 
 - **Story Arc Tracking** — follow a news topic as it develops, not just 
   the latest headline
-- **AI Summarization** — Claude reads the noise so you don't have to
+- **AI Summarization** — cuts through the noise so you get what matters
 - **Live Web Search** — pulls current articles and synthesizes them in 
   real-time
 - **Clean, readable UI** — built to be easy on the eyes, not just 
@@ -33,8 +33,7 @@ that feels like a conversation rather than a feed.
 ## Tech Stack
 
 - **Frontend** — Vanilla HTML/CSS/JS (single-file app)
-- **AI** — Anthropic Claude API (`claude-sonnet-4-20250514`)
-- **Search** — Web Search tool via Anthropic API
+- **AI** — LLM API integration
 - **Build** — Vite
 
 ---
@@ -87,8 +86,8 @@ ET-Ai-News-PS8/
 
 ## Notes
 
-This was built fast, under hackathon conditions — so there are rough 
-edges. The core idea holds up though: AI should help you *understand* 
-news, not just consume more of it.
+Built fast, under hackathon conditions — rough edges exist. The core 
+idea holds up though: AI should help you *understand* news, not just 
+consume more of it.
 
-API key is required (Anthropic). Don't commit your `.env` file.
+Don't commit your `.env` file.
