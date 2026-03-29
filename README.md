@@ -1,176 +1,94 @@
-# 📰 ET AI News Experience — PS8
-### ET AI Hackathon 2026 | Team INNOVEX
+# ET AI News Experience — PS8
 
-> An AI-native news platform that transforms how 50M+ Economic Times readers consume, understand, and interact with financial news — powered by Claude (Anthropic API).
-
----
-
-## 🚀 Live Demo
-🔗 **[View Live App →](https://claude.ai)** *(Claude Artifact — no deployment needed)*
+**ET AI Hackathon 2026 | Team INNOVEX**
 
 ---
 
-## 🧠 Problem Statement (PS8)
-Traditional news is static, one-size-fits-all, and jargon-heavy. ET's 50M+ readers range from seasoned investors to first-time market participants — yet everyone gets the same article. We built an AI-native layer that makes every story personal, interactive, visual, and multilingual.
+## What this is
+
+Most news apps just throw articles at you. This one actually helps you 
+*follow* a story — across days, sources, and context — so you're not 
+starting from zero every time you open the app.
+
+Built for the Economic Times AI Hackathon 2026 (Problem Statement 8), 
+this is a web app that uses Claude (Anthropic's API) to track how news 
+stories evolve over time, surface what matters, and present it in a way 
+that feels like a conversation rather than a feed.
 
 ---
 
-## ✨ Features
+## Features
 
-| Feature | Description |
-|---|---|
-| **My ET** | Personalized newsroom — investor, founder, or student personas with curated feeds |
-| **News Navigator** | AI synthesizes 12+ articles into structured briefings with interactive Q&A |
-| **AI Video Studio** | Paste any article → AI generates a 60–90 sec broadcast video with animated data visuals |
-| **Story Arc Tracker** | Full narrative timeline, key player positions, sentiment trajectory, predictions |
-| **Vernacular Engine** | Culturally adapted translations in Hindi, Tamil, Telugu, Bengali with jargon busters |
-| **Comic Reels** | TikTok-style swipeable comic strip news reels |
-
----
-
-## 🛠️ Tech Stack
-
-```
-Frontend       React (JSX) + Tailwind utility classes
-AI Engine      Anthropic Claude API (claude-sonnet-4-20250514)
-Web Search     Anthropic Web Search Tool (real-time news grounding)
-Deployment     Claude Artifacts (zero-infrastructure demo)
-Fonts          DM Sans, Playfair Display, Bangers, JetBrains Mono
-```
+- **Story Arc Tracking** — follow a news topic as it develops, not just 
+  the latest headline
+- **AI Summarization** — Claude reads the noise so you don't have to
+- **Live Web Search** — pulls current articles and synthesizes them in 
+  real-time
+- **Clean, readable UI** — built to be easy on the eyes, not just 
+  functional
+- Works fully in the browser — no backend setup needed
 
 ---
 
-## ⚙️ Setup Instructions
+## Tech Stack
 
-### Prerequisites
-- Node.js 18+
-- Anthropic API Key ([get one here](https://console.anthropic.com))
+- **Frontend** — Vanilla HTML/CSS/JS (single-file app)
+- **AI** — Anthropic Claude API (`claude-sonnet-4-20250514`)
+- **Search** — Web Search tool via Anthropic API
+- **Build** — Vite
 
-### 1. Clone the Repository
+---
+
+## Getting Started
+
+Clone the repo and install dependencies:
 ```bash
-git clone https://github.com/INNOVEX-team/et-ai-news-ps8.git
-cd et-ai-news-ps8
-```
-
-### 2. Install Dependencies
-```bash
+git clone https://github.com/Dheerbhatia/ET-Ai-News-PS8.git
+cd ET-Ai-News-PS8
 npm install
 ```
 
-### 3. Configure Environment
+Add your API key — copy `.env.example` to `.env` and fill it in:
 ```bash
 cp .env.example .env
 ```
-Edit `.env`:
-```env
-VITE_ANTHROPIC_API_KEY=your_api_key_here
-VITE_MODEL=claude-sonnet-4-20250514
+
+Then open `.env` and set:
+```
+VITE_ANTHROPIC_API_KEY=your_key_here
 ```
 
-### 4. Run Development Server
+Run the app:
 ```bash
 npm run dev
 ```
-Open `http://localhost:5173`
 
-### 5. Build for Production
-```bash
-npm run build
-npm run preview
-```
+Open `http://localhost:5173` and you're good to go.
 
 ---
 
-## 📁 Project Structure
-
+## Project Structure
 ```
-et-ai-news-ps8/
-├── src/
-│   ├── components/
-│   │   ├── MyET.jsx              # Personalized newsroom
-│   │   ├── NewsNavigator.jsx     # AI briefing + chat Q&A
-│   │   ├── VideoStudio.jsx       # AI broadcast video generator
-│   │   ├── StoryArcTracker.jsx   # Narrative timeline
-│   │   ├── VernacularEngine.jsx  # Multilingual adaptation
-│   │   └── ComicReels.jsx        # Swipeable news reels
-│   ├── lib/
-│   │   ├── anthropic.js          # API client + prompt templates
-│   │   └── newsData.js           # Sample ET news data
-│   ├── App.jsx                   # Main shell + tab navigation
-│   └── main.jsx
-├── public/
-├── .env.example
+ET-Ai-News-PS8/
+├── src/              # App source
+├── index.html        # Entry point
+├── vite.config.js    # Vite config
 ├── package.json
-└── README.md
+└── .env.example      # API key template
 ```
 
 ---
 
-## 🤖 AI Architecture
+## Team
 
-```
-User Input (article / profile / query)
-        ↓
-  Anthropic Claude API
-  (claude-sonnet-4-20250514)
-        ↓
-  Structured JSON Output
-  (scenes / translations / Q&A)
-        ↓
-  React UI Renderer
-  (animated visuals / charts / lower-thirds)
-```
-
-### Key Prompting Strategies
-- **Structured JSON output** with explicit schema in system prompt
-- **Role-based persona prompting** for vernacular adaptation
-- **Chain-of-thought** for story arc prediction confidence scores
-- **Web search grounding** for real-time news verification
+**INNOVEX** — built this during ET AI Hackathon 2026.
 
 ---
 
-## 🌐 API Usage
+## Notes
 
-### Video Studio — Script Generation
-```javascript
-const response = await fetch("https://api.anthropic.com/v1/messages", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({
-    model: "claude-sonnet-4-20250514",
-    max_tokens: 1000,
-    messages: [{
-      role: "user",
-      content: VIDEO_SCRIPT_PROMPT(articleText)
-    }]
-  })
-});
-```
+This was built fast, under hackathon conditions — so there are rough 
+edges. The core idea holds up though: AI should help you *understand* 
+news, not just consume more of it.
 
-### News Navigator — Interactive Q&A
-```javascript
-// Maintains conversation history for multi-turn Q&A
-const messages = [...history, { role: "user", content: userQuestion }];
-```
-
----
-
-## 👥 Team INNOVEX
-
-| Member | Role |
-|---|---|
-| [Your Name] | Full-Stack + AI Integration |
-| [Member 2] | UI/UX Design |
-| [Member 3] | Data & Research |
-
-**Institution:** Dayalbagh Educational Institute, Agra
-**Hackathon:** ET AI Hackathon 2026 — Problem Statement 8
-
----
-
-## 📄 License
-MIT License — built for ET AI Hackathon 2026
-
----
-
-
+API key is required (Anthropic). Don't commit your `.env` file.
