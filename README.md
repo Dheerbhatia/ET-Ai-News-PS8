@@ -80,7 +80,7 @@ ET-Ai-News-PS8/
 
 ## Team
 
-**INNOVEX** — built this during ET AI Hackathon 2026.
+**DHAIRYA** — built this during ET AI Hackathon 2026.
 
 ---
 
